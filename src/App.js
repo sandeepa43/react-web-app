@@ -50,7 +50,7 @@ class App extends Component {
   nameChangeHandler = (newName) => {
     this.setState({
       persons : [
-        {name:'Sandeepa singh'},
+        {name:'Sandeepa singh', age:'20'},
         {name:newName},
         {name:'Abhinav singh Rajput'}
       ]
@@ -72,14 +72,20 @@ class App extends Component {
     if(this.state.showPersons){
       persons=(
       <div>
-      <Person name = {this.state.persons[0].name} />
+        {this.state.persons.map(person =>{
+          return <Person
+          name={person.name}
+          age={person.age}
+          />
+        })}
+      {/* <Person name = {this.state.persons[0].name} />
       
       <Person name = {this.state.persons[1].name}
       click={this.switchNameHandler.bind(this,'gadha')}
       changed={this.nameChangeHandler}
       >My hobbies:fdnfd</Person>
       
-      <Person name = {this.state.persons[2].name} />
+      <Person name = {this.state.persons[2].name} /> */}
       </div>
       );
     }
