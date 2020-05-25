@@ -1,5 +1,5 @@
 import React from 'react';
-import './Person.css';
+import classes from './Person.css';
 
 
 
@@ -9,7 +9,7 @@ const person = (props) => {
 //       width:'450px'
 //   }
 //     };
- return(<div className="Person">
+ return(<div className={classes.Person}>
      <p onClick={props.click}>I am {props.name} and my age is 
  {props.age}</p>
  <p>{props.children}</p>
